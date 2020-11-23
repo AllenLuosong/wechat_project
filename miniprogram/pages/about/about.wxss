@@ -1,0 +1,14 @@
+/* miniprogram/pages/about/about.wxss */
+@import "../lib/weui.wxss";
+.picker{
+    /* padding: 0px; */
+    background-color: #ffffff;
+    text-align: center;
+}
+.picker1{
+      padding: 12px;
+}
+.button-sp-area{
+  margin: 0 auto;
+  width: 60%;
+}

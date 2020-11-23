@@ -1,0 +1,28 @@
+<!--pages/table/table.wxml-->
+<!-- <text>pages/table/table.wxml</text> -->
+
+<view>   物资借用记录(最近5条记录)</view>
+
+<view class="table">
+    <view class="tr bg-w">
+        <view class="th">借用人</view>
+        <view class="th">借用时间</view>
+        <view class="th ">借用物资</view>
+        <view class="th ">归还时间</view>
+    </view>
+    <block wx:for="{{listData}}" wx:key="{[borrower]}">
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="td">{{item.borrower}}</view>
+            <view class="td">{{item.borrowdata}}</view>
+            <view class="td">{{item.goods}}</view>
+            <view class="td">{{item.revertdata}}</view>
+        </view>
+        <view class="tr" wx:else>
+            <view class="td">{{item.borrower}}</view>
+            <view class="td">{{item.borrowdata}}</view>
+            <view class="td">{{item.goods}}</view>
+            <view class="td">{{item.revertdata}}</view>
+        </view>
+    </block>
+</view>
+

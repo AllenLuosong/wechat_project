@@ -1,0 +1,35 @@
+<!-- miniprogram/pages/home/home.wxml -->
+
+<!-- 内置组件展示 -->
+<!-- <text class="title">Hello World</text> -->
+<!-- <button size="mini">按钮</button>
+<view>知识点</view> -->
+<!-- 1-小程序的数据绑定 mustach即双大括号-->
+<!-- view 自动化换行 -->
+<view class="picker1">欢迎使用辅助测试工具小程序</view>
+<view>接口返回</view>
+<view>{{get_res}}</view>
+<!-- <view wx:for="{{students}}">{{item.name}}--{{item.age}}</view> -->
+<!-- <text>{{time}}</text>
+<text>{{age}}</text> -->
+
+<!-- 2-列表展示 wx for -->
+<!-- <view wx:for="{{students}}">{{item.name}}--{{item.age}}</view> -->
+<!-- 3-事件监听改变data -->
+<!-- <view>当前计数 {{counter}}</view>
+<button size="mini" bindtap="handleBtnClick">+</button>
+<button size="mini" bindtap="handsubBtnClick">-</button> -->
+
+<view class="su-table-box">
+   <view class="su-table">
+	<!-- 表格标题 -->
+	<view class="su-tr">  
+    <!-- <view class="su-th" v-for="(list,index) in get_title" :key="index">{{get_title}}</view> -->
+    <view class="su-th" wx:key="{{get_title}}">{{item}}</view>
+	</view> 
+  <!-- 表格内容 -->
+  <!-- <view class="su-tr" v-for="(list,index) in get_res" :key="index">
+	    <view class="su-td" v-for="(item,index_) in list" :key="index_">{{item}}</view>
+     </view> -->
+     </view>
+</view>
