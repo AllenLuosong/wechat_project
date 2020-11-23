@@ -1,4 +1,9 @@
 /* pages/table/table.wxss */
+@import "../lib/weui.wxss";
+.picker1{
+    padding: 12px;
+}
+
 .table {
     border: 0px solid darkgray;
    }

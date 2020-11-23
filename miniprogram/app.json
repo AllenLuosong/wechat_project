@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/about/about",
-    "pages/util/request"
+    "pages/table/table",
+    "pages/about/about"
+  
   ],
   "window": {
     "navigationBarBackgroundColor": "#6666FF",
@@ -16,7 +16,7 @@
     "selectedColor": "#6666FF",
     "list": [
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/table/table",
         "text": "首页",
         "iconPath": "asset/tabbar/home.jpg",
         "selectedIconPath": "asset/tabbar/home.jpg"

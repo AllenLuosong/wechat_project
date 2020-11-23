@@ -1,4 +1,6 @@
-var home_cp = require("../../pages/home/home.js")
+
+// 将url分离出来
+var host = 'http://127.0.0.1:5000';
 Page({  
     data: {
         // name:12,
@@ -13,18 +15,19 @@ Page({
     // {"code":"07","text":"text7","type":"type7"},
     ]
 },
+    
+
     onLoad: function () {
     console.log('onLoad') 
     const _this = this
     wx.request({
-      url: 'http://127.0.0.1:5000/api/getBorrowGoods',
+      url: host+'/api/getBorrowGoods',
           success: (res)=>{
             // console.log("res",res)
             const data = res.data.data;
-            // console.log("list",data)
+            console.log("list",data)
             _this.setData({
                 listData:data
-                
             })
         }
       
