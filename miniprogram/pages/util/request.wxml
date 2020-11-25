@@ -1,2 +1,13 @@
 <!--pages/util/request.wxml-->
 <text>pages/util/request.wxml</text>
+<text>表单测试</text>
+
+<form bindsubmit="addBuyerBasics">
+  <input name="buyerID" placeholder="请输入买家id"></input>
+  <input name="buyerPhone" placeholder="请输入买家电话"></input>
+  <input name="buyerName" placeholder="请输入买家名称"></input>
+  <input name="buyerWeixin" placeholder="请输入买家微信号"></input>
+  <input name="buyerPassword" placeholder="请输入买家密码"></input>
+  <button type="primary" form-type="submit">提交数据</button>
+  <button type="primary" form-type="reset">清空</button>
+</form>

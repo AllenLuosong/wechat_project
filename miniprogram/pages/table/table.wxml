@@ -1,14 +1,13 @@
 <!--pages/table/table.wxml-->
 <!-- <text>pages/table/table.wxml</text> -->
 
-<view class="picker1">物资借用记录(最近5条记录)</view>
-
+<view class="picker1">物资借用记录(最近7条记录)</view>
 <view class="table">
     <view class="tr bg-w">
         <view class="th">借用人</view>
-        <view class="th">借用时间</view>
+        <view class="th">借用日期</view>
         <view class="th ">借用物资</view>
-        <view class="th ">归还时间</view>
+        <view class="th ">归还日期</view>
     </view>
     <block wx:for="{{listData}}" wx:key="{[borrowname]}">
         <view class="tr bg-g" wx:if="{{index % 2 == 0}}">

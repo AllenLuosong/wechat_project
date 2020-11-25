@@ -2,7 +2,6 @@
   "pages": [
     "pages/table/table",
     "pages/about/about"
-  
   ],
   "window": {
     "navigationBarBackgroundColor": "#6666FF",

@@ -77,4 +77,37 @@
 
 
 
+// 连接微信云数据库
+// const db = wx.cloud.database()
+
+Page({
+  data: {
+    "buyerID": "",
+    "buyerPhone": "",
+    "buyerName": "",
+    "buyerWeixin": "",
+    "buyerPassword": "",
+    "buyerCreateTime": ""
+  },
+
+  // 向buyerBasics添加数据
+  addBuyerBasics:function(res){
+    console.log(res)
+
+    var submitData = res.detail.value
+    submitData.buyerID = Number(submitData.buyerID)
+    submitData.buyerCreateTime = Date()
+
+    wx.showLoading({
+      title: '数据正在提交中......',
+      mask:"true"
+    })
+    db.collection("buyerBasics").add({
+      data:submitData
+    }).then(res=>{
+      console.log(res)
+      wx.hideLoading()
+    })
+  }
+})
 
