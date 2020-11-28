@@ -69,7 +69,6 @@ Page({
           else{
             console.log("提交失败")
           }
-
         },
         fail(res){
           wx.showToast({
