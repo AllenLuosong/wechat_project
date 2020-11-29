@@ -16,7 +16,7 @@
     font-size: 12px;
    }
    .td {
-    width:40%;
+    width:60%;
     justify-content: center;
     text-align: center;
    }

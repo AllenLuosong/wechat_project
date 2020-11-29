@@ -41,7 +41,7 @@ Page({
   // console.log("submitData.goodName "+submitData.goodName)
   if (Object.keys(submitData.borrowName).length === 0 | Object.keys(submitData.goodName).length === 0 ){
     wx.showToast({
-      title: '物资或借用人不能为空',
+      title: '物资和借用人不能为空',
       icon:"none",
       duration: 2000
     })
