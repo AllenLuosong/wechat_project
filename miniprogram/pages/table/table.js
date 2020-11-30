@@ -15,7 +15,7 @@ Page({
           header: {
             'content-type': 'application/x-www-form-urlencoded' // 默认值
             },
-            data:{"a":"b"},
+            data:{"a":event.target.id},
           success:(res)=>{
             const data = res.data;
             console.log("data",data)
