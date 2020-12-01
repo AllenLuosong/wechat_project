@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "分类页面"
+  "navigationBarTitleText": "物资登记",
+  "enablePullDownRefresh": false
 }

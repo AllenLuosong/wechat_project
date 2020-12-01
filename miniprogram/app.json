@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/table/table",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/test/test"
   ],
   "window": {
     "navigationBarBackgroundColor": "#6666FF",
@@ -22,7 +23,13 @@
       },
       {
         "pagePath": "pages/about/about",
-        "text": "分类",
+        "text": "登记",
+        "iconPath": "asset/tabbar/category1.jpg",
+        "selectedIconPath": "asset/tabbar/category1.jpg"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "test",
         "iconPath": "asset/tabbar/category1.jpg",
         "selectedIconPath": "asset/tabbar/category1.jpg"
       }

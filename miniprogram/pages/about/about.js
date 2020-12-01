@@ -1,6 +1,6 @@
 // miniprogram/pages/about/about.js
 
-
+var app = getApp();
 Page({      
 
   /**
@@ -9,29 +9,29 @@ Page({
   data: {
     pictureList: [],
     time: (new Date()).toLocaleDateString(),
-    array: ['请点击选择', 'OPPO_Ren3 pro', 'RedMi_k30', 'G5','SIM卡'],
-    objectArray: [{
-        id: 0,
-        name: '请点击选择'
-      },
-      {
-        id: 1,
-        name: 'OPPO_Ren3 pro'
-      },
-      {
-        id: 2,
-        name: 'RedMi_k30'
-      },
-      {
-        id: 3,
-        name: 'G5'
-      },
-      {
-        id:4,
-        name:'SIM卡'
-      }
-    ],
-    index: 0,
+    // array: ['请点击选择', 'OPPO_Ren3 pro', 'RedMi_k30', 'G5','SIM卡'],
+    // objectArray: [{
+    //     id: 0,
+    //     name: '请点击选择'
+    //   },
+    //   {
+    //     id: 1,
+    //     name: 'OPPO_Ren3 pro'
+    //   },
+    //   {
+    //     id: 2,
+    //     name: 'RedMi_k30'
+    //   },
+    //   {
+    //     id: 3,
+    //     name: 'G5'
+    //   },
+    //   {
+    //     id:4,
+    //     name:'SIM卡'
+    //   }
+    // ],
+    // index: 0,
   },
 
  // 向buyerBasics添加数据
@@ -48,7 +48,7 @@ Page({
     return
   }
     wx.request({
-      url: 'http://127.0.0.1:5000/api/postBorrowGoods',
+      url: app.globalData.host+'/api/postBorrowGoods',
       method:"post",
       data:{
         borrowname:""+submitData.borrowName,
@@ -78,12 +78,12 @@ Page({
         }
     })
 },
-  bindPickerChange: function (e) {
-    console.log("当前选择 "+this.data.objectArray[e.detail.value].name)
-    this.setData({
-      index: e.detail.value
-    })
-  },
+  // bindPickerChange: function (e) {
+  //   console.log("当前选择 "+this.data.objectArray[e.detail.value].name)
+  //   this.setData({
+  //     index: e.detail.value
+  //   })
+  // },
  
 
   /**
@@ -132,7 +132,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
   },
 
   /**

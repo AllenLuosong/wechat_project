@@ -1,5 +1,4 @@
 {
-  "descr": "项目配置说明",
   "miniprogramRoot": "miniprogram/",
   "cloudfunctionRoot": "cloudfunctions/",
   "setting": {
