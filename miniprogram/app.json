@@ -1,8 +1,7 @@
 {
   "pages": [
     "pages/table/table",
-    "pages/about/about",
-    "pages/test/test"
+    "pages/about/about"
   ],
   "window": {
     "navigationBarBackgroundColor": "#6666FF",
@@ -26,14 +25,11 @@
         "text": "登记",
         "iconPath": "asset/tabbar/category1.jpg",
         "selectedIconPath": "asset/tabbar/category1.jpg"
-      },
-      {
-        "pagePath": "pages/test/test",
-        "text": "test",
-        "iconPath": "asset/tabbar/category1.jpg",
-        "selectedIconPath": "asset/tabbar/category1.jpg"
       }
     ]
   },
+  "networkTimeout": {
+    "request": 5000
+    },
   "sitemapLocation": "sitemap23.json"
 }

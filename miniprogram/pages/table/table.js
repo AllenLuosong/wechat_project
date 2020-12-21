@@ -8,13 +8,18 @@ Page({
 
   openChatView: function (event) {
     // parseInt() 方法可将字符串转数字
-    console.log("点击了第", parseInt(event.target.id) + 1, "条数据")
+    // console.log("点击了第", parseInt(event.target.id) + 1, "条数据")
+
     wx.showModal({
       // cancelColor: 'cancelColor',
       title: '提示',
       content: '请确定物资已归还',
+      
       success(res) {
         if (res.confirm) {
+          wx.showLoading({
+            title: '加载中...',
+          }),
           // console.log('用户点击确定')
           wx.request({
             url: app.globalData.host + "/api/updateBorrowGoods",
@@ -29,15 +34,19 @@ Page({
               // const data = res.data;
               // console.log("data",data)
               wx.showToast({
-                title: '归还成功,请下拉刷新',
+                title: '归还成功',
                 icon: "success",
               })
             },
             fail: (res) => {
               wx.showToast({
                 title: '网络异常,稍后再试',
-                icon: "none"
+                icon: "none",
+                duration: 3000
               })
+            },
+            complete:function(){
+              wx.hideLoading()
             }
           })
         } else if (res.cancel) {
@@ -84,33 +93,40 @@ Page({
   },
   onReachBottom: function (res) {
     console.log("上滑了页面")
+    // wx.showLoading({
+    //   title: '加载中...',
+    // })
     // wx.request({
     //   url: 'url',
     // })
+    
   },
   onPullDownRefresh: function (res) {
     // 页面下拉处理逻辑
     wx.showNavigationBarLoading()
     const _this = this
-    wx.request({
-      url: app.globalData.host + '/api/getBorrowGoods',
-      success: (res) => {
-        const data = res.data.data;
-        _this.setData({
-          listData: data
-        })
-
-      },
-      fail(res) {
-        wx.showToast({
-          title: '网络异常,稍后再试',
-          icon: "none"
-        })
-      },
-      complete:function(){
-        wx.hideNavigationBarLoading()
-        wx.stopPullDownRefresh()
-      }
-    })
+    wx.showLoading({
+        title: '加载中...',
+      }),
+      wx.request({
+        url: app.globalData.host + '/api/getBorrowGoods',
+         success: (res) => {
+          const data = res.data.data;
+          _this.setData({
+            listData: data
+          })
+        },
+        fail: (res) => {
+          wx.showToast({
+            title: '网络异常,稍后再试',
+            icon: "none"
+          })
+        },
+        complete: function () {
+          wx.hideNavigationBarLoading()
+          wx.stopPullDownRefresh()
+          wx.hideLoading()
+        }
+      })
   },
 })

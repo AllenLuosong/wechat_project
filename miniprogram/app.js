@@ -1,6 +1,6 @@
 App({
   globalData:{
-    host:"http://172.28.21.53:5000"
+    host:"https://www.lerning.xyz"
   },
 
   /**

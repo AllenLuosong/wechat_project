@@ -47,6 +47,9 @@ Page({
     })
     return
   }
+  wx.showLoading({
+    title: '加载中...',
+  }),
     wx.request({
       url: app.globalData.host+'/api/postBorrowGoods',
       method:"post",
@@ -75,6 +78,9 @@ Page({
             title: '网络异常,稍后再试',
             icon:"none"
           })
+        },
+        complete:function(){
+          wx.hideLoading()
         }
     })
 },
